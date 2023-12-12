@@ -1,0 +1,60 @@
+#app {
+  font-family: Segoe UI;
+  text-align: center;
+}
+
+/* AddTodo, AddTobuy */
+input[type="text"], input[type="number"], input[type="date"] {
+  padding: 10px 20px;
+  margin: 5px 0 10px 0;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+input[type="submit"] {
+  font-size: 16px;
+  padding: 8px 15px;
+  margin: 10px 0;
+  border: 2px solid;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.input-area {
+  width: 60%;
+  margin: 0 auto 30px;
+}
+
+/* TodoView, TobuyView */
+.item-list {
+  width: 48%;
+  margin: 0 auto;
+  border-bottom: 2px solid;
+}
+
+.moved-item-list {
+  width: 48%;
+  margin: 0 auto;
+}
+
+/* Todos, Tobuys */
+.items {
+  padding: 30px;
+}
+
+/* Todo, Tobuy */
+.item {
+  display: grid;
+  grid-template-columns: 2fr 4.5fr 2.5fr 0.5fr 0.5fr;
+  grid-template-rows: 50px;
+  gap: 20px;
+}
+
+.item > div {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  cursor: pointer;
+}
