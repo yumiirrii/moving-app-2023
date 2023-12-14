@@ -27,13 +27,13 @@ input[type="submit"] {
 
 /* TodoView, TobuyView */
 .item-list {
-  width: 48%;
+  width: 50%;
   margin: 0 auto;
   border-bottom: 2px solid;
 }
 
 .moved-item-list {
-  width: 48%;
+  width: 50%;
   margin: 0 auto;
 }
 
@@ -45,7 +45,7 @@ input[type="submit"] {
 /* Todo, Tobuy */
 .item {
   display: grid;
-  grid-template-columns: 2fr 4.5fr 2.5fr 0.5fr 0.5fr;
+  grid-template-columns: 1.7fr 4.5fr 2.5fr 0.5fr 0.5fr;
   grid-template-rows: 50px;
   gap: 20px;
 }

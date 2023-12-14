@@ -48,7 +48,12 @@ export default {
       alert('input is required')
       return
     }
-    
+
+    if(this.formData.item.length > 25) {
+      alert('input should not exceed 25 characters')
+      return
+    }
+
     if (this.isEdit) {
       const editedTobuy = {
         id: this.editingTobuy.id,

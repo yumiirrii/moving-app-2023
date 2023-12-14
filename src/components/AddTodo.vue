@@ -50,6 +50,11 @@ export default {
       alert('input is required')
       return
     }
+
+    if(this.formData.task.length > 25) {
+      alert('input should not exceed 25 characters')
+      return
+    }
     
     if (this.isEdit) {
       const editedTodo = {
