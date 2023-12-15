@@ -45,26 +45,7 @@ export default {
         isDone: ''
       },
       isEdit: false,
-    }
-  },
-  watch: {
-    todos: {
-      handler(vals) {
-        this.todos = vals.map(val => {
-          if (isAfter(new Date(), val.dueDate)) {
-            return {
-              ...val,
-              isOverdue: true
-            }
-          } else {
-            return {
-              ...val,
-              isOverdue: false
-            }
-          }
-        })
-      },
-      immediate: true
+      modifiedTodos: []
     }
   },
   methods: {
@@ -73,6 +54,7 @@ export default {
       // todos
       const filteredTodos = doItems.filter(doItem => !doItem.isDone)
       this.todos = filteredTodos.sort((a,b) => a.dueDate - b.dueDate)
+      this.todos = this.setIsOverdue(this.todos)
       // dones
       const filteredDones = doItems.filter(doItem => doItem.isDone)
       this.dones = filteredDones.sort((a,b) => a.updatedDate - b.updatedDate)
@@ -91,6 +73,12 @@ export default {
       await deleteById('todos', id)
       await this.getAllItems()
     },
+    setIsOverdue(doItems) {
+      return doItems.map(doItem => ({
+        ...doItem,
+        isOverdue: isAfter(new Date(), doItem.dueDate)
+      }))
+    }
   },
   created() {
     this.getAllItems()
